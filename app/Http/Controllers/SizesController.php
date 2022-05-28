@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Size;
 use Illuminate\Http\Request;
 
 class SizesController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $size = Size::orderby('created_at', 'DESC')->get();
+        return view('size.index', ['sizes'=>$size]);
     }
 
     /**
@@ -23,7 +25,7 @@ class SizesController extends Controller
      */
     public function create()
     {
-        //
+        return view('size.create');
     }
 
     /**
@@ -34,7 +36,21 @@ class SizesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validate
+        $this->validate($request, [
+            'size' => 'required|min:1|max:10|unique:sizes'
+        ]);
+
+
+
+        $size = new Size();
+        $size->size = $request->size;
+        $size->save();
+
+        flash('Size Added Successfully')->success();
+
+        return redirect()->route('sizes.index');
+
     }
 
     /**
@@ -56,7 +72,8 @@ class SizesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $size = Size::find($id);
+        return view('size.edit',compact('size'));
     }
 
     /**
@@ -68,7 +85,18 @@ class SizesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //Validate
+        $this->validate($request, [
+            'size' => 'required|min:1|max:10|unique:sizes,size,' .$id
+        ]);
+
+        $size = Size::find($id);
+        $size->size = $request->size;
+        $size->save();
+
+        flash('Size Updated Successfully')->success();
+
+        return redirect()->route('sizes.index');
     }
 
     /**
@@ -79,6 +107,10 @@ class SizesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $size = Size::findOrFail($id);
+        $size->delete();
+
+        flash('Size Deleted Successfully')->success();
+        return redirect()->route('sizes.index');
     }
 }

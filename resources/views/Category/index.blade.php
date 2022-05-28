@@ -50,10 +50,10 @@
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $category->name ?? '' }}</td>
                                             <td>
-                                                <a title="edit" class="mr-1" href="{{ route('categories.edit', $category->id) }}"><i class="fa fa-edit "></i></a>
-                                                <a  class="sa-delete"  href="javascript:;"  data-form-id="category-delete-{{ $category->id }}"><i class="fa fa-trash "></i></a>
+                                                <a title="edit"  class="btn btn-primary btn-sm" href="{{ route('categories.edit', $category->id) }}"><i class="fa fa-edit "></i></a>
+                                                <a  class="btn btn-danger btn-sm sa-delete"  href="javascript:;"  data-form-id="category-delete-{{ $category->id }}"><i class="fa fa-trash "></i></a>
 
-                                                <form id="category-delete-{{ $category->id }}" action="{{ route('categories.destroy', $category->id) }}" method="POST">
+                                                <form title="delete"  id="category-delete-{{ $category->id }}" action="{{ route('categories.destroy', $category->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>

@@ -31,17 +31,17 @@
                         </div>
                         <div class="card-body">
                             <!-- form start -->
-                            <form role="form" action="{{ route('categories.update', $category->id) }}" method="POST">
+                            <form role="form" action="{{ route('sizes.update', $size->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="name" class="form-control" value="{{  $category->name }}" id="name"
-                                            placeholder="Category Name">
+                                        <label for="size">Size</label>
+                                        <input type="text" name="size" class="form-control" value="{{  $size->size }}" id="size"
+                                        >
 
-                                            @if ($errors->has('name'))
-                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                            @if ($errors->has('size'))
+                                            <span class="text-danger">{{ $errors->first('size') }}</span>
                                             @endif
                                     </div>
 
