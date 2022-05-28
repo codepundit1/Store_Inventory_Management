@@ -7,16 +7,19 @@
 
 
 <body class="hold-transition sidebar-mini">
-    <div class="wrapper">
+    <div class="wrapper" >
         @include('layouts.partials._navbar')
         <!-- Main Sidebar Container -->
         @include('layouts.partials._sidebar')
 
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" >
             @include('flash::message')
-            @yield('content')
+            <div id="app">
+                @yield('content')
+            </div>
+
         </div>
         <!-- /.content-wrapper -->
 
