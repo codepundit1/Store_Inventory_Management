@@ -25,23 +25,7 @@
 
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-   <script>
-       $('.sa-delete').on('click', function() {
-           let form_id = $(this).data('form-id')
-           swal({
-                   title: "Are you sure?",
-                   text: "Once deleted, you will not be able to recover this!",
-                   icon: "warning",
-                   buttons: true,
-                   dangerMode: true,
-               })
-               .then((willDelete) => {
-                   if (willDelete) {
-                       $('#'+form_id).submit();
-                   }
-               });
-       });
-   </script>
+
 
 
    {{-- Data Table --}}
@@ -68,6 +52,22 @@
 
    <script>
        $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+
+       $('.sa-delete').on('click', function() {
+           let form_id = $(this).data('form-id')
+           swal({
+                   title: "Are you sure?",
+                   text: "Once deleted, you will not be able to recover this!",
+                   icon: "warning",
+                   buttons: true,
+                   dangerMode: true,
+               })
+               .then((willDelete) => {
+                   if (willDelete) {
+                       $('#'+form_id).submit();
+                   }
+               });
+       });
    </script>
 
 
