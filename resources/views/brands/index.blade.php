@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Categories List
+                    <h1 class="m-0">Brand List
                     </h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Categories List</li>
+                        <li class="breadcrumb-item active">Brand List</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,8 +28,8 @@
                 <div class="col">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h5 class="m-0">Create Categories
-                                <span class="mr-3"><a class="btn btn-primary btn-sm  float-right" href="{{ route('categories.create') }}">Add Resort  <i class="fa fa-plus ml-1"></i> </a>
+                            <h5 class="m-0">Create Brand
+                                <span class="mr-3"><a class="btn btn-primary btn-sm  float-right" href="{{ route('brands.create') }}">Add Brands  <i class="fa fa-plus ml-1"></i> </a>
                             </h5>
                         </div>
                         <div class="card-body">
@@ -44,16 +44,16 @@
                                 </thead>
 
                              <tbody>
-                                @if ($categories)
-                                    @foreach ($categories as $key=> $category)
+                                @if ($brands)
+                                    @foreach ($brands as $key=> $brand)
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            <td>{{ $category->name ?? '' }}</td>
+                                            <td>{{ $brand->name ?? '' }}</td>
                                             <td>
-                                                <a title="edit" class="btn btn-primary btn-sm" href="{{ route('categories.edit', $category->id) }}"><i class="fa fa-edit "></i></a>
-                                                <a  class="btn btn-danger btn-sm sa-delete"  href="javascript:;"  data-form-id="category-delete-{{ $category->id }}"><i class="fa fa-trash "></i></a>
+                                                <a title="edit" class="btn btn-primary btn-sm" href="{{ route('brands.edit', $brand->id) }}"><i class="fa fa-edit "></i></a>
+                                                <a  class="btn btn-danger btn-sm sa-delete"  href="javascript:;"  data-form-id="brand-delete-{{ $brand->id }}"><i class="fa fa-trash "></i></a>
 
-                                                <form title="delete" id="category-delete-{{ $category->id }}" action="{{ route('categories.destroy', $category->id) }}" method="POST">
+                                                <form title="delete" id="brand-delete-{{ $brand->id }}" action="{{ route('brands.destroy', $brand->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>

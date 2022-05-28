@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Categories</h1>
+                    <h1 class="m-0">Size</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Edit Categories </li>
+                        <li class="breadcrumb-item active">Edit Size </li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,7 +27,7 @@
                 <div class="col-lg-6">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h5 class="m-0">Edit Categories</h5>
+                            <h5 class="m-0">Edit Size</h5>
                         </div>
                         <div class="card-body">
                             <!-- form start -->
