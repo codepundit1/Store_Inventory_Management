@@ -29,7 +29,7 @@
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h5 class="m-0">Create Categories
-                                <span class="mr-3"><a class="btn btn-primary btn-sm  float-right" href="{{ route('categories.create') }}">Add Resort  <i class="fa fa-plus ml-1"></i> </a>
+                                <span class="mr-3"><a class="btn btn-primary btn-sm  float-right" href="{{ route('categories.create') }}">Add Category  <i class="fa fa-plus ml-1"></i> </a>
                             </h5>
                         </div>
                         <div class="card-body">
